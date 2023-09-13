@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <h1>New blog</h1>
+    <%-include("partials/__header");%>
+    <h1>blogs</h1>
+    <div class="add-blog">
+        <form action="/create/blog" method="POST" enctype="application/x-www-form-urlencoded">
+
+             <div
+                class="error">
+            <% if (error) {%>
+            <p style="background-color: red;
+            padding: 5px;
+            color: floralwhite;
+            text-align: center;">input fied cannot be empty</p>
+            <% } %>
+            <div class="blog_title" style="color: blue;">
+                <label for="blog-title">Blog Title:</label><br>
+                <input type="text" name="blog_title">
+            </div>
+            <div class="blog_snippet" style="color: brown;">
+                <label for="blog_snippet">Blog Snippet:</label><br>
+                <input type="text" name="blog Snippet">
+
+            </div>
+            <div class="blog_body" style="color: green;">
+                <label for="blog_body">Blog Body:</label><br>
+                <textarea name="blog_body" cols="30" row="10"></textarea>
+            </div>
+            <div class="'submit"> 
+                <button type="submit" stye="color: aqua; text-transform: capitalize;">create blog</button>
+            </div>
+        </form>
+    </div>
+
+    </div>
+    <%-include("partials/__footer");%>
+</div>
+</body>
+</html>
